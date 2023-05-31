@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yesnoo/config/theme/app_theme.dart';
-import 'package:yesnoo/presentation/chat/chat_screen.dart';
+import 'package:yesnoo/presentation/screens/chat/chat_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectorColor:3).theme() ,
+      theme: AppTheme(selectorColor:6).theme() ,
       home: const ChatScreen(),
     );
   }
