@@ -15,7 +15,7 @@ class YesNoModel {
   final String answer;
   final bool forced;
   final String image;
-
+  
   YesNoModel({
     required this.answer,
     required this.forced,
