@@ -11,8 +11,13 @@ class ChatProvider extends ChangeNotifier{
     Message(text: 'Hola amor', fromWho: FromWho.me),
     Message(text: 'Ya regresaste el trabajo?', fromWho: FromWho.me),
   ];
-  Future<void> herReply() async {
-    final herMesessage = await getYesNoAnswer.getAnswer();
+  
+  Future<void> herReply() async {  
+
+    final herMessage = await getYesNoAnswer.getAnswer();
+    messageList.add(herMessage);
+    notifyListeners();
+    moveScrollToBottom();
   }
 
   Future<void> sendMessage(String text) async{
@@ -26,6 +31,8 @@ class ChatProvider extends ChangeNotifier{
     notifyListeners();
     moveScrollToBottom();
   }
+
+
   Future<void> moveScrollToBottom() async{
     await Future.delayed(const Duration(milliseconds: 100));
     chatScrollController.animateTo(
